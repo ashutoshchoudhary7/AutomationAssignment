@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.ridecell.ridecellautomationassignment.VerifyRepositoryNames">
+      <class name="com.ridecell.automationassignment.tests.VerifyRepositoryNames">
         <methods>
-          <include name="wrapUp"/>
-          <include name="verifyWebAndRepositoryNames"/>
+          <include name="startTest"/>
           <include name="setUp"/>
+          <include name="verifyWebAndRepositoryNames"/>
+          <include name="wrapUp"/>
         </methods>
-      </class> <!-- com.ridecell.ridecellautomationassignment.VerifyRepositoryNames -->
+      </class> <!-- com.ridecell.automationassignment.tests.VerifyRepositoryNames -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

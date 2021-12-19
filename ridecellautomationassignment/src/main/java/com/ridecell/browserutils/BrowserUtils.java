@@ -1,6 +1,4 @@
-package com.ridecell.automationassignment;
-
-import java.util.concurrent.TimeUnit;
+package com.ridecell.browserutils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

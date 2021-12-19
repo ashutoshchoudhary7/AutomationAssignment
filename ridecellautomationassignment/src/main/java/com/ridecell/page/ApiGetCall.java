@@ -1,8 +1,10 @@
-package com.ridecell.automationassignment;
+package com.ridecell.page;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -11,6 +13,8 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 public class ApiGetCall {
+	
+	private static final Logger Log =  LogManager.getLogger(ApiGetCall.class);
 	
 	public static List<String> getCall(String URL) {
 		RestAssured.baseURI = URL;
@@ -27,8 +31,8 @@ public class ApiGetCall {
 				repoName.add(finalValue);
 			}
 		}	
-		System.out.println(repoName.size());
-		repoName.forEach(repo -> System.out.println(repo));
+		Log.info("Repository Size: " + repoName.size());
+		repoName.forEach(repo -> Log.info(repo));
 		return repoName;
 	}
 
