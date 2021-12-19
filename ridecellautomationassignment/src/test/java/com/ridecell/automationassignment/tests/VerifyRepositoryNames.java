@@ -5,20 +5,15 @@ import static org.testng.Assert.assertEquals;
 import java.util.Collections;
 import java.util.List;
 
-import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.markuputils.Markup;
 import com.ridecell.browserutils.BrowserUtils;
 import com.ridecell.page.ApiGetCall;
 import com.ridecell.page.HomePage;
 import com.ridecell.page.RepoPage;
-import com.ridecell.resources.ExtentManager;
-import com.ridecell.resources.ExtentTestManager;
 import com.ridecell.webutils.WebUtils;
 
-//@Listeners({TestListener.class})
 public class VerifyRepositoryNames extends BaseTest{
 	
 	@Test
