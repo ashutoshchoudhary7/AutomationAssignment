@@ -7,26 +7,27 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeSuite;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.ridecell.browserutils.BrowserUtils;
 import com.ridecell.page.HomePage;
 import com.ridecell.page.RepoPage;
-import com.ridecell.resources.ExtentManager;
 
 public class BaseTest {
 	
-	public static ExtentTest test;
-	public static ExtentReports report;
+	public static ExtentTest logger;
+	public static ExtentReports extent;
 	public static Properties properties;
-	
-	@BeforeClass
+
+	@BeforeSuite
 	public static WebDriver startTest() throws IOException  {
-		report = ExtentManager.getExtentReports();
-		test = report.createTest("Verify Repository Name");
+		ExtentSparkReporter reporter=new ExtentSparkReporter(System.getProperty("user.dir") + "/extent-reports");
+	    extent = new ExtentReports();
+	    extent.attachReporter(reporter);
+	    logger = extent.createTest("GithubTest");
 		properties = new Properties();
 		BufferedReader reader = new BufferedReader(new FileReader(System.getProperty("user.dir") + "/Configuration.properties/"));
 		properties.load(reader);
@@ -36,9 +37,8 @@ public class BaseTest {
 
 	@AfterClass
 	public void wrapUp() {
-		WebDriver driver = BrowserUtils.getDriver();
-		driver.quit();
-		report.flush();
+		BrowserUtils.getDriver().quit();
+		extent.flush();
 	}
 
 }

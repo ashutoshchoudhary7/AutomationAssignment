@@ -6,8 +6,8 @@
       <class name="com.ridecell.automationassignment.tests.VerifyRepositoryNames">
         <methods>
           <include name="startTest"/>
-          <include name="setUp"/>
           <include name="verifyWebAndRepositoryNames"/>
+          <include name="initializePage"/>
           <include name="wrapUp"/>
         </methods>
       </class> <!-- com.ridecell.automationassignment.tests.VerifyRepositoryNames -->
