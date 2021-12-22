@@ -5,18 +5,18 @@ import static org.testng.Assert.assertEquals;
 import java.util.Collections;
 import java.util.List;
 
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.Status;
 import com.ridecell.browserutils.BrowserUtils;
 import com.ridecell.page.ApiGetCall;
 import com.ridecell.page.HomePage;
 import com.ridecell.page.RepoPage;
 import com.ridecell.webutils.WebUtils;
 
+@Listeners(com.ridecell.webutils.Listener.class)
 public class VerifyRepositoryNames extends BaseTest{
 	
 	HomePage gitHubPage;

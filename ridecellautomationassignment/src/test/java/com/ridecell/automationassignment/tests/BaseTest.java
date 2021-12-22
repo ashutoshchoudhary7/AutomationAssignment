@@ -13,8 +13,6 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.ridecell.browserutils.BrowserUtils;
-import com.ridecell.page.HomePage;
-import com.ridecell.page.RepoPage;
 
 public class BaseTest {
 	
